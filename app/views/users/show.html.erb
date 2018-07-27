@@ -1,3 +1,14 @@
-<%= @user.email  %>
-Secret Santer profile
-help your secret santa find a gift for you
+<h3>Secret Santer profile</h3>
+<h5>help your secret santa find a gift for you</h5>
+<h4><%= @user.first_name %> <%= @user.middle_name %> <%= @user.last_name %></h4>
+<p><%= @user.email %></p>
+<% if @user.dob %>
+  <ul>
+    <li>born: <%= @user.dob.to_s %> </li>
+    <li>age: <%= (Date.today - @user.dob).to_i / 365 %> </li>
+  </ul>
+<% end %>
+<p>about</p>
+<p><%= @user.about %></p>
+<p>interests</p>
+<p><%= @user.interest %></p>
