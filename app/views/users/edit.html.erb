@@ -1,0 +1,44 @@
+<h2>Edit Profile</h2>
+help your secret santa find you a gift you'll love! be sure to fill in enough
+detail for them to be sure of who you are and and what you're about.
+
+<%= form_for(@user, url: { action: "update" }, html: { method: :patch }) do |f| %>
+
+  <div class="field">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :middle_name %>
+    <%= f.text_field :middle_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :dob %>
+    <%= f.text_field :dob %>
+  </div>
+
+  <div class="field">
+    <%= f.label :about, autofocus: true %>
+    <%= f.text_area :about %>
+  </div>
+
+  <div class="field">
+    <%= f.label :interest, required: :true %>
+    <%= f.text_area :interest %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
+
+<p><%= button_to "Manage my account", edit_user_registration_path, method: :get %></p>
+
+<%= link_to "Back", :back %>
