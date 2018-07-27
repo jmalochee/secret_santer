@@ -39,6 +39,6 @@ detail for them to be sure of who you are and and what you're about.
   </div>
 <% end %>
 
-<p><%= button_to "Manage my account", edit_user_registration_path(@user) %></p>
+<p><%= button_to "Manage my account", edit_user_registration_path, method: :get %></p>
 
 <%= link_to "Back", :back %>
